@@ -19,14 +19,11 @@ public class ExpertSystem {
         double  resultKlinis        = 0.0;
         double  prosenPenyakit      = 0.0;
 
-        List<Penyakit> penyakitList     = data.getPenyakitList();
-
+        List<Penyakit> penyakitList = data.getPenyakitList();
         for (Penyakit penyakit : penyakitList) {
-
             for (GejalaKlinis gejalaKlinis : penyakit.getGejalaKlinisLists()) {
                 prosenKlinis    = this.increaseProsenKlinis(gejalaKlinis, gejalaPasien);
                 resultKlinis    = this.setResultKlinis(gejalaKlinis, prosenKlinis);
-
                 prosenPenyakit  = this.increaseProsenPenyakit(prosenPenyakit, resultKlinis);
 
                 prosenKlinis = 0.0;
